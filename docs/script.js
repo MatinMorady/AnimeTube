@@ -1,52 +1,31 @@
-/* ------------------------------
-   تغییر تم (Dark / Light)
------------------------------- */
-
+// تغییر تم دارک / لایت
+const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
-const themeToggle = document.getElementById("themeToggle");
 
-// اگر قبلاً تم ذخیره شده بود، همان را اعمال کن
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light");
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light');
+        themeToggle.textContent = body.classList.contains('light') ? '☀️' : '🌙';
+    });
 }
 
-// دکمه تغییر تم
-themeToggle.addEventListener("click", () => {
-    body.classList.toggle("light");
+// باز و بسته کردن سایدبار در موبایل
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
 
-    if (body.classList.contains("light")) {
-        localStorage.setItem("theme", "light");
-    } else {
-        localStorage.setItem("theme", "dark");
-    }
-});
-
-/* ------------------------------
-   کلیک روی کارت ویدیو → باز شدن صفحه پخش
------------------------------- */
-
-const videoCards = document.querySelectorAll(".yt-video-card");
-
-videoCards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-        // در آینده اینجا ID واقعی ویدیو را می‌فرستیم
-        window.location.href = `video.html?id=${index}`;
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
     });
-});
+}
 
-/* ------------------------------
-   انیمیشن ساده هنگام لود شدن صفحه
------------------------------- */
+// کلیک روی کارت ویدیو (در آینده می‌تونی وصلش کنی به video.html)
+const videoCards = document.querySelectorAll('.video-card');
 
-window.addEventListener("load", () => {
-    document.querySelectorAll(".yt-video-card").forEach(card => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(10px)";
-
-        setTimeout(() => {
-            card.style.transition = "0.4s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, 200);
+videoCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // فعلاً فقط لاگ می‌گیریم، بعداً می‌تونیم ببریمش به video.html
+        console.log('Video clicked:', card.dataset.id);
+        // window.location.href = 'video.html';
     });
 });
