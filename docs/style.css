@@ -1,4 +1,3 @@
-/* پایه */
 * {
     margin: 0;
     padding: 0;
@@ -7,185 +6,115 @@
 }
 
 body {
-    background: linear-gradient(180deg, #121212 0%, #0f0f0f 100%);
-    color: var(--text);
-    transition: background 0.4s ease, color 0.4s ease;
+    background: #0f0f0f;
+    color: #ffffff;
 }
 
-/* تم‌ها */
-:root {
-    --text: #ffffff;
-    --accent: #1db954;
-    --card: #181818;
-    --border: rgba(255, 255, 255, 0.1);
-}
-
-body.light {
-    background: linear-gradient(180deg, #f5f5f5 0%, #eaeaea 100%);
-    --text: #111;
-    --accent: #1db954;
-    --card: #ffffff;
-    --border: rgba(0, 0, 0, 0.1);
-}
-
-/* هدر */
-.header {
+/* هدر یوتیوب موبایل */
+.yt-header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 65px;
+    height: 56px;
+    background: #202020;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 18px;
-    background: var(--card);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    padding: 0 12px;
     z-index: 1000;
-    animation: fadeIn 0.8s ease;
 }
 
-.logo {
+.yt-logo {
     font-size: 20px;
-    font-weight: 700;
-    color: var(--accent);
+    font-weight: bold;
+    color: #ffffff;
 }
 
-.search-box input {
-    width: 260px;
-    padding: 9px 12px;
-    border-radius: 50px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    color: var(--text);
+.yt-header-right {
+    display: flex;
+    gap: 8px;
 }
 
-.search-box button {
-    padding: 9px 12px;
-    border-radius: 50px;
+.yt-icon-btn {
+    background: none;
     border: none;
+    color: #ffffff;
+    font-size: 18px;
     cursor: pointer;
-    background: var(--accent);
-    color: #fff;
-}
-
-/* سایدبار */
-.sidebar {
-    width: 210px;
-    height: calc(100vh - 65px);
-    padding: 18px;
-    position: fixed;
-    top: 65px;
-    right: 0;
-    background: var(--card);
-    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
-    z-index: 900;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-}
-
-.sidebar.open {
-    transform: translateX(0);
-}
-
-.sidebar-item {
-    padding: 11px;
-    margin-bottom: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.sidebar-item:hover {
-    background: var(--accent);
-    color: #fff;
 }
 
 /* محتوای اصلی */
-.content {
-    margin-top: 75px;
-    margin-right: 230px;
-    padding: 18px;
-    animation: fadeIn 1.2s ease;
+.yt-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
-.section-title {
-    margin-bottom: 18px;
-    font-size: 20px;
-    color: var(--accent);
+.yt-video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px;
 }
 
-/* کارت‌های ویدیو */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 18px;
-}
-
-.video-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
+/* کارت ویدیو شبیه موبایل یوتیوب */
+.yt-video-card {
+    display: flex;
+    flex-direction: column;
+    background: #181818;
+    border-radius: 8px;
     overflow: hidden;
-    cursor: pointer;
-    transition: 0.25s ease;
-    opacity: 0;
-    animation: fadeInCard 1s forwards;
 }
 
-.video-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
-}
-
-.video-card img {
+/* تصویر ویدیو (فعلاً جای‌خالی) */
+.yt-thumbnail {
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-bottom: 2px solid var(--accent);
+    height: 200px;
+    background: #303030;
 }
 
-.video-card h3 {
-    padding: 10px;
-    font-size: 15px;
+/* اطلاعات ویدیو */
+.yt-video-info {
+    padding: 8px;
 }
 
-.video-card p {
-    padding: 0 10px 12px;
+.yt-video-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.yt-video-meta {
+    font-size: 11px;
+    color: #aaaaaa;
+}
+
+/* نوار پایین یوتیوب موبایل */
+.yt-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background: #202020;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.yt-bottom-item {
+    background: none;
+    border: none;
+    color: #aaaaaa;
     font-size: 12px;
-    opacity: 0.75;
+    cursor: pointer;
 }
 
-/* انیمیشن‌ها */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInCard {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+.yt-bottom-active {
+    color: #ffffff;
 }
 
 /* موبایل */
 @media (max-width: 768px) {
-    .search-box {
-        display: none;
-    }
-
-    .sidebar {
-        width: 220px;
-    }
-
-    .content {
-        margin-right: 0;
-        padding: 14px;
-    }
-
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .video-card img {
-        height: 190px;
+    .yt-thumbnail {
+        height: 220px;
     }
 }
