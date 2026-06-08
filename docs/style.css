@@ -1,12 +1,9 @@
-/* ------------------------------
-   تنظیمات پایه
------------------------------- */
-
+/* پایه */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "IRANSans", sans-serif;
+    font-family: "Vazirmatn", "Tahoma", sans-serif;
 }
 
 body {
@@ -15,38 +12,29 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ------------------------------
-   تم‌ها (Dark + Light)
------------------------------- */
-
+/* تم‌ها */
 :root {
     --bg: #0f0f0f;
     --text: #ffffff;
-    --glass: rgba(255, 255, 255, 0.08);
-    --border: rgba(255, 255, 255, 0.15);
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.18);
 }
 
 body.light {
     --bg: #f5f5f5;
     --text: #111;
-    --glass: rgba(255, 255, 255, 0.6);
-    --border: rgba(0, 0, 0, 0.1);
+    --glass: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 0, 0, 0.12);
 }
 
-/* ------------------------------
-   افکت شیشه‌ای (Glass UI)
------------------------------- */
-
+/* افکت شیشه‌ای */
 .glass {
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
     background: var(--glass);
     border: 1px solid var(--border);
 }
 
-/* ------------------------------
-   هدر
------------------------------- */
-
+/* هدر */
 .header {
     position: fixed;
     top: 0;
@@ -55,24 +43,33 @@ body.light {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 0 18px;
     z-index: 1000;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .logo {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .search-box {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex: 1;
+    justify-content: center;
 }
 
 .search-box input {
     width: 260px;
-    padding: 10px 14px;
+    max-width: 100%;
+    padding: 9px 12px;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: transparent;
@@ -80,7 +77,7 @@ body.light {
 }
 
 .search-box button {
-    padding: 10px 14px;
+    padding: 9px 12px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -89,19 +86,20 @@ body.light {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
 
-.theme-btn {
-    font-size: 20px;
+.icon-btn {
     background: none;
     border: none;
+    color: var(--text);
+    font-size: 20px;
     cursor: pointer;
 }
 
 .avatar {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     background: #ff4757;
     border-radius: 50%;
     display: flex;
@@ -109,29 +107,21 @@ body.light {
     align-items: center;
 }
 
-/* ------------------------------
-   ساختار صفحه
------------------------------- */
-
-.layout {
-    display: flex;
-    margin-top: 70px;
-}
-
-/* ------------------------------
-   سایدبار
------------------------------- */
-
+/* سایدبار */
 .sidebar {
-    width: 200px;
-    height: calc(100vh - 70px);
-    padding: 20px;
+    width: 210px;
+    height: calc(100vh - 65px);
+    padding: 18px;
     position: fixed;
+    top: 65px;
+    right: 0;
+    z-index: 900;
+    transition: transform 0.25s ease;
 }
 
 .sidebar-item {
-    padding: 12px;
-    margin-bottom: 10px;
+    padding: 11px;
+    margin-bottom: 8px;
     border-radius: 8px;
     cursor: pointer;
     transition: 0.2s;
@@ -141,29 +131,23 @@ body.light {
     background: var(--border);
 }
 
-/* ------------------------------
-   محتوای اصلی
------------------------------- */
-
+/* محتوای اصلی */
 .content {
-    margin-right: 220px;
-    padding: 20px;
-    width: calc(100% - 220px);
+    margin-top: 75px;
+    margin-right: 230px;
+    padding: 18px;
 }
 
 .section-title {
-    margin-bottom: 20px;
-    font-size: 22px;
+    margin-bottom: 18px;
+    font-size: 20px;
 }
 
-/* ------------------------------
-   کارت‌های ویدیو
------------------------------- */
-
+/* کارت‌های ویدیو */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
+    gap: 18px;
 }
 
 .video-card {
@@ -176,8 +160,8 @@ body.light {
 }
 
 .video-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.45);
 }
 
 .video-card img {
@@ -188,31 +172,42 @@ body.light {
 
 .video-card h3 {
     padding: 10px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .video-card p {
     padding: 0 10px 12px;
-    font-size: 13px;
-    opacity: 0.7;
+    font-size: 12px;
+    opacity: 0.75;
 }
 
-/* ------------------------------
-   ریسپانسیو موبایل
------------------------------- */
-
+/* موبایل (طراحی اپلیکیشنی) */
 @media (max-width: 768px) {
 
-    .sidebar {
+    .search-box {
         display: none;
+    }
+
+    .sidebar {
+        width: 220px;
+        transform: translateX(100%);
+        right: 0;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
     }
 
     .content {
         margin-right: 0;
-        width: 100%;
+        padding: 14px;
     }
 
-    .search-box input {
-        width: 150px;
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card img {
+        height: 190px;
     }
 }
