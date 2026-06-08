@@ -1,8 +1,9 @@
-// دکمه‌ی تغییر تم
+// ----------------------
+// 1) دکمه‌ی تغییر تم
+// ----------------------
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// بررسی حالت ذخیره‌شده
 if (localStorage.getItem("theme") === "light") {
   body.classList.remove("dark");
   themeToggle.textContent = "🌙";
@@ -11,7 +12,6 @@ if (localStorage.getItem("theme") === "light") {
   themeToggle.textContent = "☀️";
 }
 
-// تغییر تم با کلیک
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -23,3 +23,34 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙";
   }
 });
+
+
+// ----------------------
+// 2) دریافت ویدیوها از Railway
+// ----------------------
+const API = "https://animetube-production.up.railway.app";
+
+async function loadVideos() {
+  try {
+    const res = await fetch(`${API}/videos`);
+    const videos = await res.json();
+
+    const container = document.querySelector(".video-grid");
+    container.innerHTML = "";
+
+    videos.forEach(video => {
+      container.innerHTML += `
+        <div class="video-card">
+            <img src="${video.thumbnail}">
+            <h3>${video.title}</h3>
+            <p>کانال: ${video.channel}</p>
+        </div>
+      `;
+    });
+
+  } catch (err) {
+    console.error("خطا در دریافت ویدیوها:", err);
+  }
+}
+
+loadVideos();
