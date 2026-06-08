@@ -2,65 +2,62 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>AnimeTube</title>
+    <title>YouTube Mobile Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- هدر شیشه‌ای -->
-    <header class="header glass">
-        <div class="header-left">
-            <button id="menuToggle" class="icon-btn">☰</button>
-            <div class="logo">AnimeTube</div>
+    <!-- هدر شبیه یوتیوب موبایل -->
+    <header class="yt-header">
+        <div class="yt-header-left">
+            <div class="yt-logo">YouTube</div>
         </div>
-
-        <div class="search-box">
-            <input type="text" placeholder="جست‌وجوی انیمه، موزیک، OST...">
-            <button>🔍</button>
-        </div>
-
-        <div class="header-actions">
-            <button id="themeToggle" class="icon-btn">🌙</button>
-            <div class="avatar">M</div>
+        <div class="yt-header-right">
+            <button class="yt-icon-btn">🔍</button>
+            <button class="yt-icon-btn">⋮</button>
         </div>
     </header>
 
-    <!-- سایدبار اپلیکیشنی -->
-    <aside class="sidebar glass" id="sidebar">
-        <div class="sidebar-item">🏠 خانه</div>
-        <div class="sidebar-item">🔥 محبوب‌ها</div>
-        <div class="sidebar-item">🎵 موزیک‌ها</div>
-        <div class="sidebar-item">🎬 انیمه‌ها</div>
-        <div class="sidebar-item">⭐ پلی‌لیست‌ها</div>
-    </aside>
+    <!-- محتوای اصلی: لیست ویدیوها -->
+    <main class="yt-content">
+        <section class="yt-video-list">
 
-    <!-- محتوای اصلی -->
-    <main class="content">
-        <h2 class="section-title">ویدیوهای پیشنهادی</h2>
-
-        <section class="video-grid">
-
-            <article class="video-card" data-id="0">
-                <img src="https://i.imgur.com/2DhmtJ4.jpg" alt="Attack on Titan">
-                <h3>Attack on Titan Opening</h3>
-                <p>Anime OST • 120K views</p>
+            <article class="yt-video-card">
+                <div class="yt-thumbnail"></div>
+                <div class="yt-video-info">
+                    <h3 class="yt-video-title">Attack on Titan Opening</h3>
+                    <p class="yt-video-meta">AnimeTube • 120K views • 2 days ago</p>
+                </div>
             </article>
 
-            <article class="video-card" data-id="1">
-                <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Demon Slayer OST">
-                <h3>Demon Slayer OST</h3>
-                <p>Anime Music • 95K views</p>
+            <article class="yt-video-card">
+                <div class="yt-thumbnail"></div>
+                <div class="yt-video-info">
+                    <h3 class="yt-video-title">Demon Slayer OST</h3>
+                    <p class="yt-video-meta">AnimeTube • 95K views • 1 week ago</p>
+                </div>
             </article>
 
-            <article class="video-card" data-id="2">
-                <img src="https://i.imgur.com/1Jm0pZb.jpg" alt="Jujutsu Kaisen Ending">
-                <h3>Jujutsu Kaisen Ending</h3>
-                <p>Anime Ending • 150K views</p>
+            <article class="yt-video-card">
+                <div class="yt-thumbnail"></div>
+                <div class="yt-video-info">
+                    <h3 class="yt-video-title">Jujutsu Kaisen Ending</h3>
+                    <p class="yt-video-meta">AnimeTube • 150K views • 3 days ago</p>
+                </div>
             </article>
 
         </section>
     </main>
+
+    <!-- نوار پایین شبیه یوتیوب موبایل -->
+    <nav class="yt-bottom-nav">
+        <button class="yt-bottom-item yt-bottom-active">خانه</button>
+        <button class="yt-bottom-item">شورت‌ها</button>
+        <button class="yt-bottom-item">اشتراک‌ها</button>
+        <button class="yt-bottom-item">کتابخانه</button>
+    </nav>
 
     <script src="script.js"></script>
 </body>
