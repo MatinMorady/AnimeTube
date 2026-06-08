@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeTube - پخش ویدیو</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #181818;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+      background-color: #000;
+    }
+
+    .video-info {
+      padding: 16px;
+    }
+
+    .video-info h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .video-info p {
+      color: #aaa;
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    .video-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .video-actions button {
+      background-color: #222;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .video-actions button:hover {
+      background-color: #333;
+    }
+
+    .suggestions {
+      max-width: 900px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .suggestion-card {
+      background-color: #181818;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .suggestion-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .suggestion-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .suggestion-card h4 {
+      font-size: 15px;
+      margin: 8px 10px 4px;
+    }
+
+    .suggestion-card p {
+      font-size: 12px;
+      color: #aaa;
+      margin: 0 10px 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="yt-header">
+    <div class="yt-left">
+      <div class="yt-logo">AnimeTube</div>
+    </div>
+    <div class="yt-center">
+      <input type="text" class="yt-search-input" placeholder="جست‌وجوی انیمه، موزیک، OST...">
+      <button class="yt-search-btn">Search</button>
+    </div>
+    <div class="yt-right">
+      <div class="yt-avatar">M</div>
+    </div>
+  </header>
+
+  <div class="video-container">
+    <video controls poster="https://i.imgur.com/2DhmtJ4.jpg">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+    </video>
+
+    <div class="video-info">
+      <h2>Attack on Titan Opening</h2>
+      <p>Anime OST • 120K views • 1 day ago</p>
+
+      <div class="video-actions">
+        <button>👍 لایک</button>
+        <button>💾 ذخیره</button>
+        <button>⬇️ دانلود</button>
+        <button>🔗 اشتراک‌گذاری</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="suggestions">
+    <div class="suggestion-card">
+      <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Demon Slayer OST">
+      <h4>Demon Slayer OST</h4>
+      <p>Anime Music • 95K views</p>
+    </div>
+
+    <div class="suggestion-card">
+      <img src="https://i.imgur.com/1Jm0pZb.jpg" alt="Jujutsu Kaisen Ending">
+      <h4>Jujutsu Kaisen Ending</h4>
+      <p>Anime Endings • 150K views</p>
+    </div>
+
+    <div class="suggestion-card">
+      <img src="https://i.imgur.com/2DhmtJ4.jpg" alt="Attack on Titan">
+      <h4>Attack on Titan OST</h4>
+      <p>Anime OST • 120K views</p>
+    </div>
+  </section>
+
+</body>
+</html>
