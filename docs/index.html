@@ -10,7 +10,10 @@
 
     <!-- هدر شیشه‌ای -->
     <header class="header glass">
-        <div class="logo">AnimeTube</div>
+        <div class="header-left">
+            <button id="menuToggle" class="icon-btn">☰</button>
+            <div class="logo">AnimeTube</div>
+        </div>
 
         <div class="search-box">
             <input type="text" placeholder="جست‌وجوی انیمه، موزیک، OST...">
@@ -18,52 +21,46 @@
         </div>
 
         <div class="header-actions">
-            <button id="themeToggle" class="theme-btn">🌙</button>
+            <button id="themeToggle" class="icon-btn">🌙</button>
             <div class="avatar">M</div>
         </div>
     </header>
 
-    <!-- ساختار صفحه -->
-    <div class="layout">
+    <!-- سایدبار اپلیکیشنی -->
+    <aside class="sidebar glass" id="sidebar">
+        <div class="sidebar-item">🏠 خانه</div>
+        <div class="sidebar-item">🔥 محبوب‌ها</div>
+        <div class="sidebar-item">🎵 موزیک‌ها</div>
+        <div class="sidebar-item">🎬 انیمه‌ها</div>
+        <div class="sidebar-item">⭐ پلی‌لیست‌ها</div>
+    </aside>
 
-        <!-- سایدبار مدرن -->
-        <aside class="sidebar glass">
-            <div class="sidebar-item">🏠 خانه</div>
-            <div class="sidebar-item">🔥 محبوب‌ها</div>
-            <div class="sidebar-item">🎵 موزیک‌ها</div>
-            <div class="sidebar-item">🎬 انیمه‌ها</div>
-            <div class="sidebar-item">⭐ پلی‌لیست‌ها</div>
-        </aside>
+    <!-- محتوای اصلی -->
+    <main class="content">
+        <h2 class="section-title">ویدیوهای پیشنهادی</h2>
 
-        <!-- محتوای اصلی -->
-        <main class="content">
+        <section class="video-grid">
 
-            <h2 class="section-title">ویدیوهای پیشنهادی</h2>
+            <article class="video-card" data-id="0">
+                <img src="https://i.imgur.com/2DhmtJ4.jpg" alt="Attack on Titan">
+                <h3>Attack on Titan Opening</h3>
+                <p>Anime OST • 120K views</p>
+            </article>
 
-            <section class="video-grid">
+            <article class="video-card" data-id="1">
+                <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Demon Slayer OST">
+                <h3>Demon Slayer OST</h3>
+                <p>Anime Music • 95K views</p>
+            </article>
 
-                <article class="video-card" data-id="0">
-                    <img src="https://i.imgur.com/2DhmtJ4.jpg" alt="Attack on Titan">
-                    <h3>Attack on Titan Opening</h3>
-                    <p>Anime OST • 120K views</p>
-                </article>
+            <article class="video-card" data-id="2">
+                <img src="https://i.imgur.com/1Jm0pZb.jpg" alt="Jujutsu Kaisen Ending">
+                <h3>Jujutsu Kaisen Ending</h3>
+                <p>Anime Ending • 150K views</p>
+            </article>
 
-                <article class="video-card" data-id="1">
-                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Demon Slayer OST">
-                    <h3>Demon Slayer OST</h3>
-                    <p>Anime Music • 95K views</p>
-                </article>
-
-                <article class="video-card" data-id="2">
-                    <img src="https://i.imgur.com/1Jm0pZb.jpg" alt="Jujutsu Kaisen Ending">
-                    <h3>Jujutsu Kaisen Ending</h3>
-                    <p>Anime Ending • 150K views</p>
-                </article>
-
-            </section>
-
-        </main>
-    </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
