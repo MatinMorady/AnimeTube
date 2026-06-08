@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Attack on Titan Opening",
+    "channel": "Anime OST",
+    "thumbnail": "https://i.imgur.com/2DhmtJ4.jpg",
+    "likes": 120
+  },
+  {
+    "id": 2,
+    "title": "Demon Slayer OST",
+    "channel": "Anime Music",
+    "thumbnail": "https://i.imgur.com/8Km9tLL.jpg",
+    "likes": 95
+  },
+  {
+    "id": 3,
+    "title": "Jujutsu Kaisen Ending",
+    "channel": "Anime Endings",
+    "thumbnail": "https://i.imgur.com/1Jm0pZb.jpg",
+    "likes": 150
+  }
+]
