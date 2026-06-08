@@ -5,45 +5,62 @@
     <title>AnimeTube</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark">
-    <header class="topbar">
-        <div class="logo">AnimeTube</div>
-        <div class="search">
-            <input type="text" placeholder="جست‌وجوی انیمه، اوپنینگ، موزیک...">
+
+<body>
+
+    <!-- هدر شبیه یوتیوب -->
+    <header class="yt-header">
+        <div class="yt-left">
+            <div class="yt-logo">AnimeTube</div>
         </div>
-        <button id="themeToggle">🌙</button>
+
+        <div class="yt-center">
+            <input type="text" class="yt-search-input" placeholder="جست‌وجوی انیمه، موزیک، OST...">
+            <button class="yt-search-btn">Search</button>
+        </div>
+
+        <div class="yt-right">
+            <div class="yt-avatar">M</div>
+        </div>
     </header>
 
-    <div class="layout">
-        <aside class="sidebar">
-            <ul>
-                <li>خانه</li>
-                <li>انیمه‌ها</li>
-                <li>موزیک‌ها</li>
-                <li>پلی‌لیست‌ها</li>
-            </ul>
+    <!-- ساختار اصلی صفحه -->
+    <div class="yt-layout">
+
+        <!-- سایدبار -->
+        <aside class="yt-sidebar">
+            <div class="yt-sidebar-item">خانه</div>
+            <div class="yt-sidebar-item">انیمه‌ها</div>
+            <div class="yt-sidebar-item">موزیک‌ها</div>
+            <div class="yt-sidebar-item">پلی‌لیست‌ها</div>
+            <div class="yt-sidebar-item">محبوب‌ها</div>
         </aside>
 
-        <main class="content">
-            <div class="video-grid">
-                <div class="video-card">
-                    <img src="https://i.imgur.com/2DhmtJ4.jpg">
+        <!-- محتوای اصلی -->
+        <main class="yt-content">
+
+            <section class="yt-videos-grid">
+
+                <article class="yt-video-card">
+                    <img src="https://i.imgur.com/2DhmtJ4.jpg" alt="Attack on Titan">
                     <h3>Attack on Titan Opening</h3>
-                    <p>کانال: Anime OST</p>
-                </div>
+                    <p>Anime OST • 120K views • 1 day ago</p>
+                </article>
 
-                <div class="video-card">
-                    <img src="https://i.imgur.com/8Km9tLL.jpg">
+                <article class="yt-video-card">
+                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Demon Slayer OST">
                     <h3>Demon Slayer OST</h3>
-                    <p>کانال: Anime Music</p>
-                </div>
+                    <p>Anime Music • 95K views • 3 days ago</p>
+                </article>
 
-                <div class="video-card">
-                    <img src="https://i.imgur.com/1Jm0pZb.jpg">
+                <article class="yt-video-card">
+                    <img src="https://i.imgur.com/1Jm0pZb.jpg" alt="Jujutsu Kaisen Ending">
                     <h3>Jujutsu Kaisen Ending</h3>
-                    <p>کانال: Anime Endings</p>
-                </div>
-            </div>
+                    <p>Anime Endings • 150K views • 1 week ago</p>
+                </article>
+
+            </section>
+
         </main>
     </div>
 
