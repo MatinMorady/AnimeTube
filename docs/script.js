@@ -1,56 +1,52 @@
-// ----------------------
-// 1) دکمه‌ی تغییر تم
-// ----------------------
-const themeToggle = document.getElementById("themeToggle");
-const body = document.body;
+/* ------------------------------
+   تغییر تم (Dark / Light)
+------------------------------ */
 
+const body = document.body;
+const themeToggle = document.getElementById("themeToggle");
+
+// اگر قبلاً تم ذخیره شده بود، همان را اعمال کن
 if (localStorage.getItem("theme") === "light") {
-  body.classList.remove("dark");
-  themeToggle.textContent = "🌙";
-} else {
-  body.classList.add("dark");
-  themeToggle.textContent = "☀️";
+    body.classList.add("light");
 }
 
+// دکمه تغییر تم
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
+    body.classList.toggle("light");
 
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    themeToggle.textContent = "🌙";
-  }
+    if (body.classList.contains("light")) {
+        localStorage.setItem("theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark");
+    }
 });
 
+/* ------------------------------
+   کلیک روی کارت ویدیو → باز شدن صفحه پخش
+------------------------------ */
 
-// ----------------------
-// 2) دریافت ویدیوها از Railway
-// ----------------------
-const API = "https://animetube-production.up.railway.app";
+const videoCards = document.querySelectorAll(".yt-video-card");
 
-async function loadVideos() {
-  try {
-    const res = await fetch(`${API}/videos`);
-    const videos = await res.json();
-
-    const container = document.querySelector(".video-grid");
-    container.innerHTML = "";
-
-    videos.forEach(video => {
-      container.innerHTML += `
-        <div class="video-card">
-            <img src="${video.thumbnail}">
-            <h3>${video.title}</h3>
-            <p>کانال: ${video.channel}</p>
-        </div>
-      `;
+videoCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+        // در آینده اینجا ID واقعی ویدیو را می‌فرستیم
+        window.location.href = `video.html?id=${index}`;
     });
+});
 
-  } catch (err) {
-    console.error("خطا در دریافت ویدیوها:", err);
-  }
-}
+/* ------------------------------
+   انیمیشن ساده هنگام لود شدن صفحه
+------------------------------ */
 
-loadVideos();
+window.addEventListener("load", () => {
+    document.querySelectorAll(".yt-video-card").forEach(card => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(10px)";
+
+        setTimeout(() => {
+            card.style.transition = "0.4s ease";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, 200);
+    });
+});
